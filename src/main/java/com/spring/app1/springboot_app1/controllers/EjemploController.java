@@ -7,10 +7,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import models.Empleados;
 
 
+/*
+Controller
+Qué es: Una anotación que marca una clase como controlador web (MVC).
 
+Qué hace: Permite manejar solicitudes HTTP y devolver vistas (HTML/JSP) en aplicaciones web.
+*/
 @Controller
 public class EjemploController {
-
+   //@GetMapping	GET (leer datos)
     @GetMapping("/detalles_info")
 
     public String info(Model model){ //puede ser cualquier tipo de dato

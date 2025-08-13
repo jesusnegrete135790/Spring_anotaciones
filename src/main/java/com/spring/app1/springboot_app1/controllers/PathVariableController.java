@@ -22,8 +22,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/api/variables")
 public class PathVariableController {
 
+/*
+@value
+ Qué es: Anotación para inyectar valores desde el archivo de configuración (application.properties o application.yml).
+
+Qué hace: Lee una propiedad del entorno o archivo de configuración.
+ */
+
     @Value("${config.codigo}")
-    private int codigo;
+    private int codigo; 
 
     @Value("${config.usuario}")
     private String usuario;
@@ -34,6 +41,8 @@ public class PathVariableController {
     @Value("${config.valores}")
     private String valores;
 
+
+       //@GetMapping	GET (leer datos)
     @GetMapping("/pagina/{mensaje}")
     public ParametroDTO pagina1(@PathVariable String mensaje){
 
@@ -42,13 +51,13 @@ public class PathVariableController {
         return parametro1;
     }
 
-     
+    //@PostMapping	POST (crear datos)
     @PostMapping("/solicitud")
     public Empleados creaEmpleados(@RequestBody Empleados empleados){
         return empleados;
     }
     
-
+   //@GetMapping	GET (leer datos)
     @GetMapping("/valores")
     public Map<String,Object> values(){
         Map<String,Object>json= new HashMap<>();

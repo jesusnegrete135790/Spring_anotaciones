@@ -8,11 +8,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 // url de acceso = http://localhost:8080/api/parametros/detalles?=aprendiendo%20SPring
 
+
+/*
+@RestController
+Qué es: Es una combinación de @Controller + @ResponseBody.
+
+Qué hace: Devuelve datos directamente en formato JSON o XML.
+*/
 @RestController
 @RequestMapping("/api/parametros")
 
 public class RequestParamControllers {
-
+   // @GetMapping	GET (leer datos)
         @GetMapping("/detalles")
         public ParametroDTO detalle(@RequestParam (required = false, defaultValue = "Bienvenidos a todos" )String informacion){
             
